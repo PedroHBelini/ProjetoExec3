@@ -20,7 +20,7 @@ public class ConjuntoNumeros {
 
             int numero = scanner.nextInt();
 
-            if (numero < 0 || numero > 99) {
+            if (numero < 0 || numero > 99999) {
 
                 System.out.println("Erro");
 
@@ -31,7 +31,7 @@ public class ConjuntoNumeros {
             int indice = encontrarIndice(vetor, tamanho, numero);
 
             if (indice == -1) {
-                if (tamanho < 9) {
+                if (tamanho < 10) {
 
                     vetor[tamanho] = numero;
 
@@ -55,6 +55,7 @@ public class ConjuntoNumeros {
 
         scanner.close();
     }
+
     private static int encontrarIndice(int[] vetor, int tamanho, int numero) {
 
         for (int i = 0; i < tamanho; i++) {
@@ -70,10 +71,18 @@ public class ConjuntoNumeros {
         return -1;
 
     }
+
     private static void imprimirVetor(int[] vetor, int tamanho) {
-        for (int i = 0; i < tamanho; i++) {
-            System.out.print(vetor[i] + " ");
+        if (tamanho == 0) {
+
+            System.out.println("Vetor vazio.");
+
+        } else {
+
+            for (int i = 0; i < tamanho; i++) {
+                System.out.print(vetor[i] + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 }
