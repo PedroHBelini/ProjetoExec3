@@ -20,10 +20,18 @@ public class ConjuntoNumeros {
 
             int numero = scanner.nextInt();
 
+            if (numero < 0 || numero > 99) {
+
+                System.out.println("Erro");
+
+                break;
+
+            }
+
             int indice = encontrarIndice(vetor, tamanho, numero);
 
             if (indice == -1) {
-                if (tamanho < 10) {
+                if (tamanho < 9) {
 
                     vetor[tamanho] = numero;
 
